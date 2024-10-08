@@ -13,8 +13,8 @@ export default {
  
     },
       backgroundImage: {
-        'background': "url('./assets/bg.jpg')",
-        'speed': "url('./src/assets/speed.jpg')",
+        'background': "url('/src/assets/bg.jpg')",
+        'speed': "url('/src/assets/speed.jpg')",
         
         
       }
