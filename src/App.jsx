@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import {Home} from "./Pages/Home";
 import {Cities} from "./Pages/Cities";
 import {NotFound} from "./Pages/NotFound";
-import { Login } from './Pages/Login'; 
+import {Login} from './Pages/Login'; 
 import {StandarLayout} from "./Layouts/StandarLayout";
 import {Details} from "./Pages/Details";
 
