@@ -31,8 +31,8 @@ function Carousel() {
 
             </div>
 
-            <div className="relative overflow-hidden">
-                <div className="flex flex-wrap place-content-center h-full md:mx-10 md:flex-nowrap transition duration-500 gap-4" >
+            <div className="relative overflow-hidden animate-slide-in ">
+                <div className="flex flex-wrap place-content-center h-full md:mx-10 md:flex-nowrap transition duration-1000 ease-in-out gap-4" >
                     {data.slice(currentSlide, currentSlide + imgBySlide).map((item) => (
                             <div key={item.name} className={`h-64 md:w-full w-1/3`}>
                                 <NavLink to="../Details">
