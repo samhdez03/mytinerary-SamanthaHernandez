@@ -6,7 +6,7 @@ function CallToAction() {
     return (
         <>
         <div className="flex w-full place-content-center mb-3">
-            <div className="flex flex-col justify-center md:flex-row items-center sm:3/4 w-full bg-black bg-opacity-50 font-fedra rounded">
+            <div className="flex flex-col justify-center md:flex-row items-center sm:3/4 w-full font-fedra ">
                 <div className='md:w-32 md:ml-6 place-content-center'>
                     <img src={img} className="flex h-16 md:h-auto w-auto md:w-32 md:mb-10 md:block" alt="YODA" />
 

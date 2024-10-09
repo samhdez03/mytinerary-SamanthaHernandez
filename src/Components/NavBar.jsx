@@ -6,8 +6,8 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div className="relative z-50">
-        <button className="md:hidden z-50 p-2 text-white hover:text-yellow-500"
+      <div className="relative ">
+        <button className="md:hidden p-2 text-white hover:text-yellow-500"
           onClick={() => setIsOpen(!isOpen)} aria-label="menu" >
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" >
             {isOpen ? (
@@ -18,7 +18,7 @@ function NavBar() {
           </svg>
         </button>
 
-        <nav className={`absolute top-9 right-0 md:w-full sm:w-32 bg-gray-800 text-white rounded shadow-lg ${isOpen ? "block z-50" : "hidden"} md:flex md:static md:bg-transparent md:top-auto md:shadow-none`} >
+        <nav className={`absolute top-9 right-0 md:bg-transparent md:w-full sm:w-32 text-white rounded shadow-lg ${isOpen ? "block z-50" : "hidden"} md:flex md:static  md:top-auto md:shadow-none`} >
           <ul className="flex flex-col md:flex-row md:space-x-6 p-4 md:p-0">
             
               <li className="font-SW place-content-center px-3" >

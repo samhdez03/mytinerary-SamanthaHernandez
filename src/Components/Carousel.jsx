@@ -37,7 +37,7 @@ function Carousel() {
     };
 
     return (
-        <div className="bg-background bg-no-repeat bg-cover bg-center md:pt-4 bg-opacity-70 min-h-full font-fedra text-white shadow-2xl ">
+        <div className=" md:pt-4 min-h-full font-fedra text-white ">
             <div className="flex flex-row place-content-center text-center gap-4 mb-4">
                 <img src={img} className="flex h-20 w-auto md:mb-10" alt="R2D2y3CPO" />
                 <h2 className="text-3xl text-center mt-10">Popular Mytineraries</h2>

@@ -3,8 +3,8 @@ import img from '../assets/BB8.png';
 
 function Hero() {
     return (
-        <div className="flex place-content-center w-full">  
-            <div className="flex w-full flex-col rounded-2xl items-center justify-center h-60 md:h-80 bg-speed bg-center bg-cover text-white">
+        <div className="flex place-content-center md:min-h-screen w-full">  
+            <div className="flex w-full flex-col top-0 rounded-2xl items-center justify-center h-80 md:min-h-screen bg-speed bg-center bg-cover text-white">
                 <h1 className="flex items-center text-center text-5xl md:text-7xl font-SW">
                     <img src={img} className="h-auto mr-1 w-10 md:w-24 mb-10 hidden md:block" alt="R2D2" />
                     My Tinerary

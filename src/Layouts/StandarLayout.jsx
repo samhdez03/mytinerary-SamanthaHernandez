@@ -8,9 +8,9 @@ function StandarLayout() {
   return (
     <>
     
-    <div className="flex flex-col bg-black bg-cover min-h-screen ">
+    <div className="flex flex-col  min-h-screen ">
       <Header></Header>
-        <main className="flex-grow mt-16">
+        <main className="flex-grow">
           <Outlet></Outlet>
         </main>
       <Footer></Footer>
