@@ -48,9 +48,9 @@ function Carousel() {
                 <div className="flex flex-wrap place-content-center h-full md:mx-10 md:flex-nowrap transition duration-1000 ease-in-out gap-4" >
                     {data.slice(currentSlide, currentSlide + imgBySlide).map((item) => (
                         <div key={item.name} className={`h-64 md:w-full w-3/4`}>
-                            <NavLink to="../Details">
+                            <NavLink to="/Details">
                                 <img src={item.img} alt={item.name} className="w-full h-3/4 object-cover rounded-xl" />
-                                <p className="text-center">{item.name}</p>
+                                <p className="text-center text-xl">{item.name}</p>
                             </NavLink>
                         </div>
 

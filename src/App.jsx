@@ -27,7 +27,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-    <div className=' h-full w-full min-h-full'>
+    <div className=' h-full w-full min-h-full bg-background bg-contain'>
       <RouterProvider router={router}></RouterProvider>
     </div>     
     </>
