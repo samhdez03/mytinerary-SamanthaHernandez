@@ -5,15 +5,28 @@ import img from '../assets/R2D2-3CPO.png';
 
 function Carousel() {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const imgBySlide = 4
+    const [screenSize, setScreenSize] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenSize(window.innerWidth);
+        };
+     
+
+        window.addEventListener('resize', handleResize);
+
+    }, []);
+
+    const imgBySlide = screenSize < 768 ? 1 : 4;
+
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((currentSlide) => (currentSlide + imgBySlide) % data.length);
         }, 5000);
 
-        return () => clearInterval(interval); 
-    }, []);
+        return () => clearInterval(interval);
+    }, );
 
     const nextSlide = () => {
         setCurrentSlide((currentSlide) => (currentSlide + imgBySlide) % data.length);
@@ -24,7 +37,7 @@ function Carousel() {
     };
 
     return (
-        <div className="bg-black bg-opacity-70 md:m-7 my-7 rounded-2xl font-fedra text-white py-8">
+        <div className="bg-background bg-no-repeat bg-cover bg-center md:pt-4 bg-opacity-70 min-h-full font-fedra text-white shadow-2xl ">
             <div className="flex flex-row place-content-center text-center gap-4 mb-4">
                 <img src={img} className="flex h-20 w-auto md:mb-10" alt="R2D2y3CPO" />
                 <h2 className="text-3xl text-center mt-10">Popular Mytineraries</h2>
@@ -34,12 +47,12 @@ function Carousel() {
             <div className="relative overflow-hidden animate-slide-in ">
                 <div className="flex flex-wrap place-content-center h-full md:mx-10 md:flex-nowrap transition duration-1000 ease-in-out gap-4" >
                     {data.slice(currentSlide, currentSlide + imgBySlide).map((item) => (
-                            <div key={item.name} className={`h-64 md:w-full w-1/3`}>
-                                <NavLink to="../Details">
-                                <img src={item.img} alt={item.name} className="w-full h-3/4 object-cover" />
+                        <div key={item.name} className={`h-64 md:w-full w-3/4`}>
+                            <NavLink to="../Details">
+                                <img src={item.img} alt={item.name} className="w-full h-3/4 object-cover rounded-xl" />
                                 <p className="text-center">{item.name}</p>
-                                </NavLink>
-                            </div> 
+                            </NavLink>
+                        </div>
 
                     ))}
                 </div>

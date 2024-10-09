@@ -1,18 +1,18 @@
 // datos generados
 const data = [
     
-        { name: 'New York', img: 'https://www.elattelier.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/11/Nuevo-museo-en-la-Estatua-de-la-Libertad.jpg.webp' },
-        { name: 'Tokyo', img: 'https://media.nomadicmatt.com/2024/tokyothings.jpeg' },
-        { name: 'Paris', img: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/03/1c/9c.jpg' },
-        { name: 'London', img: 'https://www.universal-assistance.com/uablog/wp-content/uploads/2022/12/big-ben.png' },
-        { name: 'Berlin', img: 'https://assets.buendiatours.com/s3fs-public/styles/highlight_large/public/2021-11/berlin_que-ver_puerta-de-brandeburgo_noche_0.jpg.webp?VersionId=JCpMNYFeh1URNcXPWjJwlm2Y065at5W9&itok=CjO_aFha' },
-        { name: 'Praga', img: 'https://www.hola.com/horizon/square/f08885065d42-praga-ciudad-historica-t.jpg?im=Resize=(960),type=downsize' },
-        { name: 'Budapest', img: 'https://fotografias.lasexta.com/clipping/cmsimages02/2023/11/26/2560A7A9-C42C-4FA6-BC6B-D146187B25DB/parlamento-budapest_97.jpg?crop=1280,720,x0,y65&width=1600&height=900&optimize=high&format=webply' },
-        { name: 'Viena', img: 'https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F80352cd4-d2fd-46cf-ba88-aa7d32bf1442.jpg?crop=1564%2C880%2C318%2C0&resize=1500' },
-        { name: 'México', img: 'https://blogs.unitec.mx/hubfs/Imported_Blog_Media/por-que-el-turismo-es-el-musculo-de-mexico-1.jpg' },
-        { name: 'Colombia', img: 'https://aventurecolombia.com/wp-content/uploads/2020/08/bogota-cundinamarca-colombia-5-%C2%A9-Tristan-Quevilly.jpg' },
-        { name: 'Argentina', img: 'https://www.reportur.com/wp-content/uploads/2019/08/glaciar-e1565834650693.jpg' },
-        { name: 'Perú', img: 'https://www.estrategia-sustentable.com.mx/wp-content/uploads/2024/07/Machu-Picchu-1132x509.jpeg' },
+        { name: 'Alderaan', img: 'https://lumiere-a.akamaihd.net/v1/images/alderaan-main_f5b676cf.jpeg?region=0%2C0%2C1280%2C720' },
+        { name: 'Coruscant', img: 'https://lumiere-a.akamaihd.net/v1/images/coruscant-main_d2fad5f2.jpeg?region=245%2C0%2C1430%2C804' },
+        { name: 'Naboo', img: 'https://lumiere-a.akamaihd.net/v1/images/databank_naboo_01_169_6cd7e1e0.jpeg?region=0%2C0%2C1560%2C878' },
+        { name: 'Emperor’s throne room', img: 'https://lumiere-a.akamaihd.net/v1/images/emperor-s-throne-room-main_638aef97.jpeg?region=0%2C67%2C1280%2C720' },
+        { name: 'Tatooine', img: 'https://lumiere-a.akamaihd.net/v1/images/open-uri20150608-27674-obj7u0_7c60f729.jpeg?region=0%2C0%2C1200%2C513' },
+        { name: 'Dagobah', img: 'https://lumiere-a.akamaihd.net/v1/images/Dagobah_890df592.jpeg?region=0%2C80%2C1260%2C711' },
+        { name: 'Mandalore', img: 'https://lumiere-a.akamaihd.net/v1/images/mandalore-main_e664e9b9.jpeg?region=492%2C0%2C2855%2C1606' },
+        { name: 'Kashyyk', img: 'https://lumiere-a.akamaihd.net/v1/images/kashyyyk-bio-1_e5db7349.jpeg' },
+        { name: 'Hoth', img: 'https://lumiere-a.akamaihd.net/v1/images/open-uri20150608-27674-83g3lt_76fb492d.jpeg?region=0%2C0%2C1200%2C675' },
+        { name: 'Endor', img: 'https://lumiere-a.akamaihd.net/v1/images/databank_endor_01_169_68ba9bdc.jpeg?region=0%2C0%2C1560%2C878' },
+        { name: 'Mustafar', img: 'https://lumiere-a.akamaihd.net/v1/images/databank_mustafar_01_169_5b470758.jpeg?region=0%2C0%2C1560%2C878' },
+        { name: 'Boba Fett’s Palace', img: 'https://lumiere-a.akamaihd.net/v1/images/jabba-s-palace-main_7f0e8594.jpeg?region=0%2C0%2C951%2C536' },
       
   ];
   
