@@ -13,7 +13,7 @@ function Footer() {
     
   return (
     <>
-    <footer className="bg-black bg-opacity-70 text-white p-2">
+    <footer className="bg-black opacity-99 text-white p-2">
     <div className="flex justify-between items-center">
         <nav className=" flex flex-row ">
         <ul className="flex flex-col ml-4 mb-2">
