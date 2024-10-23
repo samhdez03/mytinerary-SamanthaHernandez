@@ -14,6 +14,7 @@ const router = createBrowserRouter([
       { path: "/mytinerary-SamanthaHernandez", element: <Home></Home> },
       { path: "/home", element: <Home></Home> },
       { path: "/cities", element: <Cities></Cities> },
+      {path: `/Details/:ID`, element: <Details></Details>}
       
 
     ],
