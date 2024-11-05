@@ -1,6 +1,6 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import img from '../assets/yoda.png';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import img from '../assets/yoda.png'
 
 function CallToAction() {
     return (
@@ -24,7 +24,7 @@ function CallToAction() {
         </div>
 
         </>
-    );
-};
+    )
+}
 
-export { CallToAction };
+export { CallToAction }

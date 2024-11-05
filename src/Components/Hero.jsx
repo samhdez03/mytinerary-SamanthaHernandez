@@ -1,5 +1,5 @@
-import React from 'react';
-import img from '../assets/BB8.png';
+import React from 'react'
+import img from '../assets/BB8.png'
 
 function Hero() {
     return (
@@ -14,7 +14,7 @@ function Hero() {
                 </p>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export { Hero };
+export { Hero }

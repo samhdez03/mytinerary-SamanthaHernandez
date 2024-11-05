@@ -1,5 +1,9 @@
+import { useSelector, useDispatch } from "react-redux"
+import { setSearch } from "../store/actions/citiesActions"
 
-function SearchBar({ text, handleChangeText }) {
+function SearchBar() {
+    const dispatch = useDispatch()
+    const {search} = useSelector((state) => state.allCities)
     return (<>
         <div className="flex flex-col sm:flex-row sm:justify-center mt-20">
             <form className="md:max-w-md md:mx-auto w-full flex flex-col">
@@ -13,7 +17,7 @@ function SearchBar({ text, handleChangeText }) {
                                 </svg>
                             </div>
                             <input type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Search your next destination..." value={text} onChange={(e) => handleChangeText(e.target.value)}
+                                placeholder="Search your next destination..." value={search} onChange={(e) => dispatch(setSearch(e.target.value))}
                             />
                         </div>
                     </div>

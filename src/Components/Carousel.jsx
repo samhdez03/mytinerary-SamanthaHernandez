@@ -1,40 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import { data } from '../data/data.js';
-import { NavLink } from 'react-router-dom';
-import img from '../assets/R2D2-3CPO.png';
+import React, { useState, useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
+import img from '../assets/R2D2-3CPO.png'
+import {useSelector} from "react-redux"
 
 function Carousel() {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [screenSize, setScreenSize] = useState(window.innerWidth);
+    const [currentSlide, setCurrentSlide] = useState(0)
+    const [screenSize, setScreenSize] = useState(window.innerWidth)
+    const data = useSelector(state => state.allCities.datosCities)
 
     useEffect(() => {
         const handleResize = () => {
-            setScreenSize(window.innerWidth);
-        };
-     
+            setScreenSize(window.innerWidth)
+        }
+        window.addEventListener('resize', handleResize)
+    }, [])
 
-        window.addEventListener('resize', handleResize);
-
-    }, []);
-
-    const imgBySlide = screenSize < 768 ? 1 : 4;
-
+    const imgBySlide = screenSize < 768 ? 1 : 4
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentSlide((currentSlide) => (currentSlide + imgBySlide) % data.length);
-        }, 5000);
-
-        return () => clearInterval(interval);
-    }, );
+            setCurrentSlide((currentSlide) => (currentSlide + imgBySlide) % data.length)
+        }, 5000)
+        return () => clearInterval(interval)
+    }, )
 
     const nextSlide = () => {
-        setCurrentSlide((currentSlide) => (currentSlide + imgBySlide) % data.length);
-    };
+        setCurrentSlide((currentSlide) => (currentSlide + imgBySlide) % data.length)
+    }
 
     const prevSlide = () => {
-        setCurrentSlide((currentSlide) => (currentSlide - imgBySlide + data.length) % data.length);
-    };
+        setCurrentSlide((currentSlide) => (currentSlide - imgBySlide + data.length) % data.length)
+    }
 
     return (
         <div className=" md:pt-4 min-h-full font-fedra text-white ">
@@ -48,7 +44,7 @@ function Carousel() {
                 <div className="flex flex-wrap place-content-center h-full md:mx-10 md:flex-nowrap transition duration-1000 ease-in-out gap-4" >
                     {data.slice(currentSlide, currentSlide + imgBySlide).map((item) => (
                         <div key={item.name} className={`h-64 md:w-full w-3/4`}>
-                            <NavLink to="/Details">
+                            <NavLink to = {`/Details/${item._id}`}>
                                 <img src={item.img} alt={item.name} className="w-full h-3/4 object-cover rounded-xl" />
                                 <p className="text-center text-xl">{item.name}</p>
                             </NavLink>
@@ -64,9 +60,9 @@ function Carousel() {
                 </button>
             </div>
         </div>
-    );
-};
+    )
+}
 
 
 
-export { Carousel };
+export { Carousel }

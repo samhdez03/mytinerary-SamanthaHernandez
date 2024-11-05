@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
-import img from '../assets/pngwing.com (17).png';
-import{ NavBar }from "./NavBar";
+import { NavLink } from "react-router-dom"
+import img from '../assets/pngwing.com (17).png'
+import{ NavBar }from "./NavBar"
 
 function Header(){
   

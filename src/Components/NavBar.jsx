@@ -1,9 +1,9 @@
-import { React, useState } from "react";
-import { NavLink } from "react-router-dom";
-import img from '../assets/vader.png';
+import { React, useState } from "react"
+import { NavLink } from "react-router-dom"
+import img from '../assets/vader.png'
 
 function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <>
       <div className="relative ">
@@ -45,7 +45,7 @@ function NavBar() {
 
 
     </>
-  );
+  )
 }
 
 export { NavBar }

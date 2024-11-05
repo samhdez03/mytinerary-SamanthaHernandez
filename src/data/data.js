@@ -14,6 +14,6 @@ const data = [
   {name: "Aleen",  img:"https://lumiere-a.akamaihd.net/v1/images/databank_aleen_01_169_40bcb2df.jpeg?region=0%2C49%2C1560%2C780", appearances: "Star Wars: The Clone Wars", affiliations: "Galactic Republic", climate: "Temperate", locations: "", terrain: "Deserts, Jungles, Mesas", species: "Aleena, Kindalo", creature: "", vehicles: ""},
   {name: "Geonosis",  img:"https://lumiere-a.akamaihd.net/v1/images/databank_geonosis_01_169_1d04e086.jpeg?region=0%2C0%2C1560%2C878", appearances: "Star Wars: Attack of the Clones (Episode II), Star Wars: The Clone Wars", affiliations: "Galactic Empire, Confederacy of Independent Systems", climate: "Hot", locations: "", terrain: "Mountains", species: "Geonosian", creature: "Orray, Brain worm", vehicles: "Count Dooku's Speeder, AV-7 Anti-vehicle Artillery Cannon, Geonosian Fighter"},
         
-  ];
+  ]
   
-export { data };
+export { data }

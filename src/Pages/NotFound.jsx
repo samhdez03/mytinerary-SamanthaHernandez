@@ -1,6 +1,6 @@
-import { Footer } from "../Components/Footer";
-import { Header } from "../Components/header";
-import img from '../assets/Death_Star.png';
+import { Footer } from "../Components/Footer"
+import { Header } from "../Components/header"
+import img from '../assets/Death_Star.png'
 
 function NotFound(){
     return(

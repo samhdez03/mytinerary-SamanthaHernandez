@@ -1,13 +1,13 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa"; 
+import React from "react"
+import { NavLink } from "react-router-dom"
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa" 
 
 
 const routes = [
   { to: "/home", text: "Home" },
   { to: "/cities", text: "Cities" },
   { to: "/Login", text:"Login"}
-];
+]
 
 function Footer() {
     
@@ -55,7 +55,7 @@ function Footer() {
  
     
     </>
-     );
+     )
 }
 
 export {Footer}
