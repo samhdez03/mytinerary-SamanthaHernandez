@@ -6,10 +6,8 @@ import { Navigate, NavLink } from "react-router-dom"
 
 function UpdateCountry() {
     const countries = JSON.parse(localStorage.getItem("countries"))
-    console.log("", countries)
     const user = JSON.parse(localStorage.getItem('user'))
     const userid = user._id
-    console.log("", userid)
     const dispatch = useDispatch()
     const [country, setcountry] = useState('')
     const [redirect, setRedirect] = useState(false)

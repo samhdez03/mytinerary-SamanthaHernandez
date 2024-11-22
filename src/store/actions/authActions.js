@@ -43,7 +43,6 @@ const fetchCountries = createAsyncThunk(
 )
 
 const signUp = createAsyncThunk('login', async({formData}) => {
-    console.log("", formData)
     const response = await axios.post("http://localhost:8080/api/users/signUp", formData)
     const { name, lastName, email, password, photo, country } = response.data.response
     const userData = {

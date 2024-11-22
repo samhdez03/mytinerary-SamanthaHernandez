@@ -14,7 +14,6 @@ export default function GoogleRoute({ children }) {
   const photo = queryParams.get("photo")
   const _id = queryParams.get("_id")
   const country = queryParams.get("country")
-  console.log(country)
   if (token) {
     dispatch(updateToken(token))
     // Guardamos los datos en localStorage
