@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { useSelector } from "react-redux"
+import { Navigate } from "react-router-dom"
 
 export default function SignRoute({children}){
     const token = useSelector(state=>state.authReducer.token)

@@ -21,7 +21,7 @@ export default function GoogleRoute({ children }) {
     localStorage.setItem("user", JSON.stringify({ name, lastName, email, photo, _id, country }))    
   }
   if (country === "empty"||'') {
-    return <Navigate to="/updateCountry" replace />;
+    return <Navigate to="/updateCountry" replace />
   }
 
   // Si no, redirige al home

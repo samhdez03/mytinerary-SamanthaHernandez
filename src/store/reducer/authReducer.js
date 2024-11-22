@@ -29,7 +29,7 @@ const authReducer = createReducer(initialState, (builder) => {
         state.user = null, 
         state.token = null
     }).addCase(updateToken, (state, action) => {
-        state.token = action.payload; // Actualiza el token con el valor recibido
+        state.token = action.payload // Actualiza el token con el valor recibido
     }).addCase(setUser, (state,action)=>{
         state.loading = false,
         state.error = false,

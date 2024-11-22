@@ -5,7 +5,7 @@ const updateToken = createAction('updateToken')
 
 const updateCountry = createAsyncThunk('updateCountry', async ({ country, userid }) => {
     try {
-        const info = { country };
+        const info = { country }
         const response = await axios.put(`http://localhost:8080/api/users/updateByID/${userid}`, info)
         return response.data
     } catch (error) {
