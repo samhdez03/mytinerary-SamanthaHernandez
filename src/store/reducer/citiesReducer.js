@@ -15,7 +15,6 @@ export const allCities = createReducer (initialState,(builder)=> {
         state.search = action.payload
       })
     .addCase(fetchCities.pending, (state)=>{
-        console.log(state.datosCities)
         state.loading = true
     })
     .addCase(fetchCities.fulfilled, (state, action)=>{
@@ -52,7 +51,6 @@ export const itineraries = createReducer (initialState,(builder)=> {
     .addCase(getItineraries.fulfilled, (state, action)=>{
         state.loading = false
         state.itineraries = action.payload
-        console.log(state.itineraries)
     })
     .addCase(getItineraries.rejected, (state)=>{
         state.loading = false

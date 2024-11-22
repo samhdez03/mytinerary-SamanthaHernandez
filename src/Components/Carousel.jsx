@@ -63,6 +63,4 @@ function Carousel() {
     )
 }
 
-
-
 export { Carousel }

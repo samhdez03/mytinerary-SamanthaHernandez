@@ -8,6 +8,12 @@ import { Details } from "./Pages/Details"
 import { useDispatch } from 'react-redux'
 import { fetchCities } from './store/actions/citiesActions'
 import { useEffect } from 'react'
+import axios from 'axios'
+import { setUser } from './store/actions/authActions'
+import PrivateRoute from './Components/PrivateRoute'
+import SignRoute from './Components/SignRoute'
+import GoogleRoute from './Components/GoogleRoute'
+import { SignUp } from './Pages/SignUp'
 
 const router = createBrowserRouter([
   {
@@ -24,15 +30,30 @@ const router = createBrowserRouter([
       { path: `/Details/:ID`, element: <Details></Details> },
       { path: `/mytinerary-SamanthaHernandez/Details/:ID`, element: <Details></Details> },
       { path: "/Details", element: <Details></Details> },
-
-
+      { path: "/mytinerary-SamanthaHernandez/Login", element: <SignRoute><Login></Login></SignRoute> },
+      { path: "/Login", element: <SignRoute><Login></Login></SignRoute> },
+      { path: "/google/callback", element:<GoogleRoute></GoogleRoute>  },
+      { path: "/signUp", element:<SignRoute><SignUp></SignUp> </SignRoute> },
     ],
   },
-  { path: "/", element: <Home></Home> },
-  { path: "/Login", element: <Login></Login> },
-
   { path: "/*", element: <NotFound></NotFound> },
 ])
+
+const loginWithToken =  async(token) => {
+  try {
+    const response = await axios.get('validateToken',
+      {
+        headers: {
+          Authorization: `Bearer{token}`
+        }
+      }
+    )
+    return response.data.response
+  } catch (error) {
+    console.log(error)
+
+  }
+}
 
 function App() {
   const dispatch = useDispatch()
@@ -40,6 +61,13 @@ function App() {
     dispatch(fetchCities())
   }
     , [dispatch])
+
+  let token = localStorage.getItem("token")
+  if (token) {
+    loginWithToken(token).then((user)=> {
+      dispatch(setUser({user, token}))
+    })
+  } 
 
   return (
     <>

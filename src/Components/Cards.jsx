@@ -17,13 +17,8 @@ function Card({ title, url, city}) {
                     </button>
                 </div>
             </div>
-
-
         </>
-
-
     )
-
 }
 
 export { Card }

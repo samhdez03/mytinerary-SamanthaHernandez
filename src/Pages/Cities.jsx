@@ -13,8 +13,7 @@ function Cities() {
         const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase())
         return matchesSearch
     })
-
-
+    
     return (
         <>
             <main className="mx-2">

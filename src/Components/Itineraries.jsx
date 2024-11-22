@@ -12,8 +12,7 @@ export function Itineraries() {
 
     useEffect(() => {
         dispatch(getItineraries(ID))
-    }
-        , [])
+    }, [])
     if (loading) {
         return <div><p className="flex justify-center mt-20 text-center sm:text-md md:text-md text-xl font-fedra text-white">Loading...</p></div>
     }
@@ -33,12 +32,10 @@ export function Itineraries() {
                             <CardItinerary itinerary={itinerary._id} key={itinerary._id} className="h-2" ></CardItinerary>
 
                         ))}
-                       
+
                     </ul>
-                    
                 )}
             </div>
-
         </>
     )
 }
