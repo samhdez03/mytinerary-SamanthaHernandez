@@ -9,11 +9,11 @@ import { useDispatch } from 'react-redux'
 import { fetchCities } from './store/actions/citiesActions'
 import { useEffect } from 'react'
 import axios from 'axios'
-import { setUser } from './store/actions/authActions'
-import PrivateRoute from './Components/PrivateRoute'
+import { setUser, fetchCountries } from './store/actions/authActions'
 import SignRoute from './Components/SignRoute'
 import GoogleRoute from './Components/GoogleRoute'
 import { SignUp } from './Pages/SignUp'
+import { UpdateCountryPage } from './Pages/updateCountry'
 
 const router = createBrowserRouter([
   {
@@ -32,7 +32,8 @@ const router = createBrowserRouter([
       { path: "/Details", element: <Details></Details> },
       { path: "/mytinerary-SamanthaHernandez/Login", element: <SignRoute><Login></Login></SignRoute> },
       { path: "/Login", element: <SignRoute><Login></Login></SignRoute> },
-      { path: "/google/callback", element:<GoogleRoute></GoogleRoute>  },
+      { path: "/google/callback", element:<GoogleRoute></GoogleRoute>},
+      { path: "/updateCountry", element:<UpdateCountryPage></UpdateCountryPage>},
       { path: "/signUp", element:<SignRoute><SignUp></SignUp> </SignRoute> },
     ],
   },
@@ -68,6 +69,10 @@ function App() {
       dispatch(setUser({user, token}))
     })
   } 
+  useEffect(() => {
+    dispatch(fetchCountries())
+  }
+    , [dispatch])
 
   return (
     <>

@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { signUp } from "../store/actions/authActions"
 import { NavLink } from "react-router-dom"
+import schema from "./schemaCreate.js"
 
 function SignUp() {
     const [formData, setFormData] = useState({
@@ -12,38 +13,36 @@ function SignUp() {
         photo: "",
         country: "",
     })
-    const [passwordError, setPasswordError] = useState("")
+    const [errors, setErrors] = useState({})
     const countries = useSelector(state => state.countries.datosCountries)
     const dispatch = useDispatch()
     const { loading, error } = useSelector(state => state.signUpReducer)
 
-    const validatePassword = (password) => {
-        const passwordRegex =
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-        if (!passwordRegex.test(password)) {
-          setPasswordError(
-            "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character."
-          );
-        } else {
-          setPasswordError(""); // Limpiar el error si es válido
+    const validateForm = () => {
+        const { error } = schema.validate(formData, { abortEarly: false })
+        if (error) {
+            const errorMessages = {}
+            error.details.forEach((err) => {
+                errorMessages[err.path[0]] = err.message
+            })
+            setErrors(errorMessages)
+            return false
+        }
+        setErrors({})
+        return true
+    }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setFormData({ ...formData, [name]: value })
+      }
+    
+      const handleSubmit = (e) => {
+        e.preventDefault()
+        if (validateForm()) {
+          dispatch(signUp(formData))
         }
       }
-        const handleChange = (e) => {
-            const { name, value } = e.target
-            if (name === "password") {
-                validatePassword(value) // Validar la contraseña en tiempo real
-              }
-            setFormData({ ...formData, [name]: value })
-        }
-    
-        const handleSubmit = (e) => {
-            e.preventDefault()
-            if (passwordError) {
-                alert("Please correct the password field before submitting. Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.")
-                return
-              }
-            dispatch(signUp({formData}))
-        }
     return (
         <>
             <main className="mx-2 mt-20">
@@ -72,6 +71,9 @@ function SignUp() {
                                         required
                                         className="w-full px-4 py-2 text-white bg-[#011f26] border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-teal-500"
                                     />
+                                    {errors[field] && (
+                                        <p className="text-red-500 text-sm">{errors[field]}</p>
+                                    )}
                                 </div>
                             ))}
                             <div>

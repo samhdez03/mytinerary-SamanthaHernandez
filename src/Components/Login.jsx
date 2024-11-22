@@ -1,6 +1,6 @@
 import { useState,useEffect} from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { fetchCountries, login} from "../store/actions/authActions"
+import { login} from "../store/actions/authActions"
 import { NavLink } from "react-router-dom"
 
 function Login() {
@@ -14,10 +14,7 @@ function Login() {
     }
     const loading = authStore.loading
     const error = authStore.error
-    useEffect(() => {
-        dispatch(fetchCountries())
-      }
-        , [dispatch])
+    
     
     return (
         <>

@@ -22,7 +22,6 @@ export const allCities = createReducer (initialState,(builder)=> {
         state.datosCities = action.payload
     })
     .addCase(fetchCities.rejected, (state)=>{
-        console.log("murio")
         state.loading = false
         state.error = true
     })
@@ -38,7 +37,6 @@ export const details = createReducer (initialState,(builder)=> {
         state.city = action.payload
     })
     .addCase(fetchCities.rejected, (state)=>{
-        console.log("murio")
         state.loading = false
         state.error = true
     })

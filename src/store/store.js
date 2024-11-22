@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { allCities, details, itineraries } from "./reducer/citiesReducer"
-import {authReducer, countries, signUpReducer} from "./reducer/authReducer.js"
+import {authReducer, countries, signUpReducer, updateCountry} from "./reducer/authReducer.js"
 
 const store = configureStore({
     reducer: {
@@ -10,7 +10,8 @@ const store = configureStore({
         itineraries,
         authReducer, 
         countries,
-        signUpReducer
+        signUpReducer,
+        updateCountry
     }
 })
 

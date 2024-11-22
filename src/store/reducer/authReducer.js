@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit"
-import  { login, logOut, setUser, updateToken, signUp, fetchCountries } from "../actions/authActions.js"
+import  { login, logOut, setUser, updateToken, signUp, fetchCountries, updateCountry as UC } from "../actions/authActions.js"
 
 const initialState = {
     loading: false,
@@ -30,7 +30,6 @@ const authReducer = createReducer(initialState, (builder) => {
         state.token = null
     }).addCase(updateToken, (state, action) => {
         state.token = action.payload; // Actualiza el token con el valor recibido
-        console.log("Token actualizado:", action.payload);
     }).addCase(setUser, (state,action)=>{
         state.loading = false,
         state.error = false,
@@ -64,8 +63,7 @@ const signUpReducer = createReducer(initialState,(builder)=>{
         state.user = null, 
         state.token = null
     }).addCase(updateToken, (state, action) => {
-        state.token = action.payload; // Actualiza el token con el valor recibido
-        console.log("Token actualizado:", action.payload);
+        state.token = action.payload
     }).addCase(setUser, (state,action)=>{
         state.loading = false,
         state.error = false,
@@ -93,7 +91,22 @@ const countries = createReducer(initialState,(builder)=>{
         state.loading = false
         state.error = true
     })
-
 })
 
-export {authReducer, signUpReducer, countries}
+const updateCountry = createReducer(initialState,(builder)=>{
+    builder.addCase(UC.pending, (state)=>{
+        state.loading = true
+    })
+    .addCase(UC.fulfilled, (state, action)=>{
+        state.loading = false, 
+        state.error = false,
+        console.log("Country updated successfully:", action.payload)
+    })
+    .addCase(UC.rejected, (state)=>{
+        console.log("murio")
+        state.loading = false
+        state.error = true
+    })
+})
+
+export {authReducer, signUpReducer, countries, updateCountry}

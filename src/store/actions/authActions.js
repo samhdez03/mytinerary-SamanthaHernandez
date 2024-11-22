@@ -1,7 +1,17 @@
 import { createAction, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios"
 
-const updateToken = createAction('updateToken');
+const updateToken = createAction('updateToken')
+
+const updateCountry = createAsyncThunk('updateCountry', async ({ country, userid }) => {
+    try {
+        const info = { country };
+        const response = await axios.put(`http://localhost:8080/api/users/updateByID/${userid}`, info)
+        return response.data
+    } catch (error) {
+        return (error)
+    }
+})
 
 const setUser = createAction('setUser', (datos) => {
     return {
@@ -16,7 +26,6 @@ const login = createAsyncThunk('login', async({email, password}) => {
         password: password
     }
     const response = await axios.post("http://localhost:8080/api/auth/signIn", credentials)
-    console.log("datos", response.data)
     localStorage.setItem("token", response.data.token)
     localStorage.setItem("user", JSON.stringify(response.data.user))
     return response.data
@@ -28,7 +37,7 @@ const fetchCountries = createAsyncThunk(
     async () => {
         const response = await axios.get(`http://localhost:8080/api/countries/name`)
         const countriesFetch = response.data.response
-        console.log( countriesFetch)
+        localStorage.setItem("countries", JSON.stringify(countriesFetch))
         return countriesFetch
     }
 )
@@ -45,9 +54,6 @@ const signUp = createAsyncThunk('login', async({formData}) => {
         photo,
         country,
       }
-    console.log("datos", response.data)
-    console.log("datos stringify", userData)
-    console.log(response.data.token)
     localStorage.setItem("token", response.data.token)
     localStorage.setItem("user", JSON.stringify(userData))
 
@@ -55,4 +61,4 @@ const signUp = createAsyncThunk('login', async({formData}) => {
 }
 )
 
-export {login, setUser, logOut, updateToken, fetchCountries, signUp}
+export {login, setUser, logOut, updateToken, fetchCountries, signUp, updateCountry}
